@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#252525"
+    tools:context=".ui.fragments.onboard.OnBoardFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_skip"
+        android:layout_gravity="end"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textStyle="normal"
+        android:textSize="16sp"
+        android:textColor="#d88b02"
+        android:text="Пропустить"
+        />
+
+    <com.google.android.material.tabs.TabLayout
+        android:backgroundTint="#252525"
+        android:id="@+id/into_tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+
+        android:layout_marginTop="204dp"
+        android:layout_gravity="center"
+
+        app:tabBackground="@drawable/default_dot"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorColor="#d88b02"
+        app:tabIndicatorHeight="11dp"
+        app:tabIndicatorGravity="center"
+        app:tabRippleColor="@null"
+        app:tabGravity="center"
+        app:tabPaddingEnd="6dp"
+        android:background="@color/white"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="14dp"
+        android:backgroundTint="#d88b02"
+        android:layout_gravity="bottom | center_horizontal"
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Начать"
+        android:layout_marginBottom="100dp" />
+</FrameLayout>
