@@ -1,6 +1,7 @@
 package com.m4.notes.ui.fragments.onboard
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,17 +12,21 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.m4.notes.R
 import com.m4.notes.databinding.FragmentOnBoardBinding
 import com.m4.notes.ui.adapters.OnBoardAdapter
+import com.m4.notes.utils.PreferenceHelper
 
 
 class OnBoardFragment : Fragment() {
 
     lateinit var binding: FragmentOnBoardBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View {
         binding = FragmentOnBoardBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +41,9 @@ class OnBoardFragment : Fragment() {
     }
 
     private fun setupListeners() = with(binding.viewPager){
-        binding.btnStart.alpha = 0f;
+        val sharedPreferences = PreferenceHelper()
+        sharedPreferences.unit(requireContext())
+        binding.btnStart.alpha = 0f
         registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -44,8 +51,9 @@ class OnBoardFragment : Fragment() {
                 binding.apply {
                     if (position == 2) {
                         tvSkip.animate().alpha(0f).setDuration(shortAnimationDuration.toLong()).setListener(null)
-                        btnStart.animate().translationY(0f).alpha(1f);
+                        btnStart.animate().translationY(0f).alpha(1f)
                         btnStart.setOnClickListener {
+                            sharedPreferences.showOnBoard = false
                             findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
                         }
                     } else {

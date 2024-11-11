@@ -13,6 +13,8 @@
         <action
             android:id="@+id/action_onBoardFragment_to_noteFragment"
             app:destination="@id/noteFragment"
+            app:popUpTo="@id/onBoardFragment"
+            app:popUpToInclusive="true"
             app:enterAnim="@anim/slide_in"
             app:exitAnim="@anim/slide_out"
             app:popEnterAnim="@anim/slide_in"
