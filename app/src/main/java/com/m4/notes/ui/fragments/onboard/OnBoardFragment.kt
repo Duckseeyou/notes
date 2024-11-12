@@ -1,7 +1,6 @@
 package com.m4.notes.ui.fragments.onboard
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -55,6 +54,7 @@ class OnBoardFragment : Fragment() {
                         btnStart.setOnClickListener {
                             sharedPreferences.showOnBoard = false
                             findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
+
                         }
                     } else {
                         btnStart.animate().translationY(600f).alpha(0f)
