@@ -1,17 +1,19 @@
 package com.m4.notes.ui.fragments.note
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.m4.notes.App
 import com.m4.notes.data.models.NoteModel
-
-
 import com.m4.notes.databinding.FragmentNoteDetailBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+
 
 
 class NoteDetailFragment : Fragment() {
@@ -24,14 +26,22 @@ class NoteDetailFragment : Fragment() {
     ): View {
         binding = FragmentNoteDetailBinding.inflate(layoutInflater)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
+        val date = SimpleDateFormat("dd MMMM")
+        val time = SimpleDateFormat("HH:mm")
+        binding.tvDate.text = date.format(Date())
+        binding.tvTime.text = time.format(Date())
     }
 
     private fun setupListeners() = with(binding) {
+        btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         etTitle.addTextChangedListener {
             if (etTitle.text.isNotEmpty() && etDesc.text.isNotEmpty()){
                 tvDone.visibility = View.VISIBLE
@@ -49,7 +59,8 @@ class NoteDetailFragment : Fragment() {
         tvDone.setOnClickListener {
             val title = etTitle.text.toString()
             val description = etDesc.text.toString()
-            App.appDatabase?.noteDao()?.insertNote(NoteModel(title, description))
+            val date = tvDate.text.toString() + " " + tvTime.text.toString()
+            App.appDatabase?.noteDao()?.insertNote(NoteModel(title, description, date))
             findNavController().navigateUp()
         }
     }
