@@ -19,7 +19,6 @@
         android:layout_height="40dp" >
 
         <androidx.appcompat.widget.AppCompatImageButton
-
             android:id="@+id/btn_back"
             android:contentDescription="Back"
             android:layout_width="36dp"
@@ -52,16 +51,146 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatImageButton
-
         app:layout_constraintTop_toTopOf="@id/linear_layout"
         app:layout_constraintEnd_toStartOf="@id/tv_done"
-        android:id="@+id/btn_actions"
+        android:id="@+id/btn_change_color"
         android:contentDescription="Actions"
-        android:layout_width="48dp"
+        android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginEnd="20dp"
         android:background="@android:color/transparent"
         android:src="@drawable/actions_button" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bg_change_color"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@id/btn_change_color"
+        app:layout_constraintTop_toTopOf="@id/btn_change_color"
+        app:cardCornerRadius="20dp"
+        android:layout_width="26dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_height="26dp" />
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_colors"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:backgroundTint="#5b5b5b"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@id/btn_change_color"
+        app:layout_constraintTop_toBottomOf="@id/btn_change_color"
+        app:cardCornerRadius="4dp"
+        android:layout_width="184dp"
+        android:layout_height="140dp" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/tv_color"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:text="Поменять цвет"/>
+
+            <LinearLayout
+                android:id="@+id/first_color_layout"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_color"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_yellow"
+                    android:contentDescription="yellow"
+                    android:backgroundTint="#fff599"
+                    app:cornerRadius="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/btn_purple"
+                    android:contentDescription="purple"
+                    android:backgroundTint="#B69CFF"
+                    app:cornerRadius="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_marginStart="4dp"
+                    android:id="@+id/btn_pink"
+                    android:contentDescription="pink"
+                    android:backgroundTint="#fd99ff"
+                    app:cornerRadius="4dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/first_color_layout"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.google.android.material.button.MaterialButton
+                    android:contentDescription="orange"
+                    android:id="@+id/btn_orange"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#ff9e9e"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:contentDescription="green"
+                    android:id="@+id/btn_green"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#91f48f"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:contentDescription="cyan"
+                    android:id="@+id/btn_cyan"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#9effff"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    app:cornerRadius="4dp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         app:layout_constraintTop_toTopOf="@id/linear_layout"

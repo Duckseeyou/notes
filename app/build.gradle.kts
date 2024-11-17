@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -51,7 +52,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Navigation
-    val nav_version = "2.8.3"
+    val nav_version = "2.8.4"
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
 

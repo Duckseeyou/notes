@@ -12,5 +12,9 @@ class PreferenceHelper {
 
     var showOnBoard: Boolean
         get() = sharedPreferences.getBoolean("onboard", true)
-        set(value: Boolean) = sharedPreferences.edit().putBoolean("onboard", value).apply()
+        set(value) = sharedPreferences.edit().putBoolean("onboard", value).apply()
+
+    var isLinearLayout: Boolean
+        get() = sharedPreferences.getBoolean("linearlayout", true)
+        set(value) = sharedPreferences.edit().putBoolean("linearlayout", value).apply()
 }
