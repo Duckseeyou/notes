@@ -53,7 +53,7 @@ class OnBoardFragment : Fragment() {
                         btnStart.animate().translationY(0f).alpha(1f)
                         btnStart.setOnClickListener {
                             sharedPreferences.showOnBoard = false
-                            findNavController().navigate(R.id.action_onBoardFragment_to_noteFragment)
+                            findNavController().navigate(R.id.action_onBoardFragment_to_signInFragment)
 
                         }
                     } else {

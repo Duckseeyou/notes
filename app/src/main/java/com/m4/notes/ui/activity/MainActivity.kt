@@ -23,7 +23,11 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.onBoardFragment)
         } else {
             navController.popBackStack()
-            navController.navigate(R.id.noteFragment)
+            if (sharedPreferences.isLoggedIn){
+                navController.navigate(R.id.noteFragment)
+            } else{
+                navController.navigate(R.id.signInFragment)
+            }
         }
 
 

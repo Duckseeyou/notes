@@ -13,7 +13,9 @@ class PreferenceHelper {
     var showOnBoard: Boolean
         get() = sharedPreferences.getBoolean("onboard", true)
         set(value) = sharedPreferences.edit().putBoolean("onboard", value).apply()
-
+    var isLoggedIn: Boolean
+        get() = sharedPreferences.getBoolean("auth", false)
+        set(value) = sharedPreferences.edit().putBoolean("auth", value).apply()
     var isLinearLayout: Boolean
         get() = sharedPreferences.getBoolean("linearlayout", true)
         set(value) = sharedPreferences.edit().putBoolean("linearlayout", value).apply()

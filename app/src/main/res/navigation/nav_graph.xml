@@ -11,8 +11,8 @@
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board" >
         <action
-            android:id="@+id/action_onBoardFragment_to_noteFragment"
-            app:destination="@id/noteFragment"
+            android:id="@+id/action_onBoardFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
             app:popUpTo="@id/onBoardFragment"
             app:popUpToInclusive="true"
             app:enterAnim="@anim/slide_in"
@@ -43,6 +43,21 @@
         <argument
             android:name="noteId"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.m4.notes.ui.fragments.signin.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:popUpTo="@id/onBoardFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
 
 </navigation>

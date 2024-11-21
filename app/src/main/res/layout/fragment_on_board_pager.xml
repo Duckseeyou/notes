@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/potta_one_regular"
         android:textStyle="normal"
-        android:layout_marginTop="64dp"
-        android:textSize="24sp"
+        android:layout_marginTop="72dp"
+        android:textSize="28sp"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:text="Notes"/>
