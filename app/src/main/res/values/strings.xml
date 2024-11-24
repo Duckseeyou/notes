@@ -3,4 +3,5 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="web_client_id">645451377681-ellqa9rqhf4o82erfknhm6k1fjmtqk7a.apps.googleusercontent.com</string>
+    <string name="msg_token_fmt" />
 </resources>
